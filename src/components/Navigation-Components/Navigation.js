@@ -78,14 +78,14 @@ export const Navigation = () => {
                     <li className={'space-x-2 laptop:space-x-8 text-lg hidden tablet:block font-montserrat'}>
                         <NavigationItems navigationItems={navigationItems}/>
                     </li>
-                    <li className={'space-x-3 font-montserrat hidden'}>
-                        <LoginMenuButton>
-                            <NavigationButtonSingle btnText={'Giriş Yap'}/>
-                        </LoginMenuButton>
-                        <RegisterMenuButton>
-                            <NavigationButtonGradient btnText={'Kayıt Ol'}/>
-                        </RegisterMenuButton>
-                    </li>
+                    {/*<li className={'space-x-3 font-montserrat hidden'}>*/}
+                    {/*    <LoginMenuButton>*/}
+                    {/*        <NavigationButtonSingle btnText={'Giriş Yap'}/>*/}
+                    {/*    </LoginMenuButton>*/}
+                    {/*    <RegisterMenuButton>*/}
+                    {/*        <NavigationButtonGradient btnText={'Kayıt Ol'}/>*/}
+                    {/*    </RegisterMenuButton>*/}
+                    {/*</li>*/}
                     <li className={'space-x-3 block tablet:hidden relative overflow-hidden'}>
                         <MobileMenuButton/>
                         <MobileNavigationMenu navigationItems={navigationItems}/>

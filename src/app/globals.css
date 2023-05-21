@@ -1,27 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Radio+Canada:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@100;200;300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+
+@layer base {
+
+  ::selection {
+    color: azure;
+    background: #957FB1;
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  *:focus {
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  :root {
+
+    --theme-50: 252, 247, 240;
+    --theme-100: 249, 236, 219;
+    --theme-200: 241, 215, 183;
+    --theme-300: 232, 187, 137;
+    --theme-400: 222, 151, 89;
+    --theme-500: 215, 123, 56;
+    --theme-600: 200, 101, 46;
+    --theme-700: 166, 79 ,40;
+    --theme-800: 133, 63 ,39;
+    --theme-900: 108, 54 ,34;
+    --theme-950: 36, 16 ,10;
+
+    /*--theme-50: 239, 250, 246;*/
+    /*--theme-100: 217, 242, 230;*/
+    /*--theme-200: 181, 229, 209;*/
+    /*--theme-300: 133, 208, 181;*/
+    /*--theme-400: 82, 181, 150;*/
+    /*--theme-500: 48, 153, 123;*/
+    /*--theme-600: 33, 122, 99;*/
+    /*--theme-700: 26, 98 ,80;*/
+    /*--theme-800: 23, 78 ,66;*/
+    /*--theme-900: 20, 64 ,55;*/
+    /*--theme-950: 10, 36 ,31;*/
+
+    /*--theme-50: 242, 249, 249;*/
+    /*--theme-100: 222, 237, 239;*/
+    /*--theme-200: 193, 219, 224;*/
+    /*--theme-300: 150, 193, 202;*/
+    /*--theme-400: 99, 159, 173;*/
+    /*--theme-500: 72, 131, 146;*/
+    /*--theme-600: 62, 108, 124;*/
+    /*--theme-700: 55, 89 ,103;*/
+    /*--theme-800: 55, 81 ,92;*/
+    /*--theme-900: 47, 65 ,74;*/
+    /*--theme-950: 27, 42 ,49;*/
+
+    /*--theme-50: 242, 247, 249;*/
+    /*--theme-100: 222, 234, 239;*/
+    /*--theme-200: 193, 214, 224;*/
+    /*--theme-300: 150, 185, 202;*/
+    /*--theme-400: 99, 147, 173;*/
+    /*--theme-500: 72, 119, 146;*/
+    /*--theme-600: 62, 98 ,124;*/
+    /*--theme-700: 55, 81 ,103;*/
+    /*--theme-800: 55, 75 ,92;*/
+    /*--theme-900: 47, 61 ,74;*/
+    /*--theme-950: 27, 38 ,49;*/
+
+    /*--theme-50: 244, 249, 248;*/
+    /*--theme-100: 219, 236, 232;*/
+    /*--theme-200: 183, 216, 210;*/
+    /*--theme-300: 138, 190, 182;*/
+    /*--theme-400: 103, 162, 155;*/
+    /*--theme-500: 72, 132, 125;*/
+    /*--theme-600: 56, 105, 101;*/
+    /*--theme-700: 48, 85 ,82;*/
+    /*--theme-800: 41, 70 ,68;*/
+    /*--theme-900: 38, 59 ,58;*/
+    /*--theme-950: 18, 33 ,33;*/
+
+    --theme-font-50: 0, 0, 0;
+    --theme-font-100: 23, 23, 23;
+    --theme-font-200: 56, 56, 56;
+    --theme-font-300: 67, 67, 67;
+    --theme-font-400: 81, 81, 81;
+    --theme-font-500: 102, 102, 102;
+    --theme-font-600: 129, 129, 129;
+    --theme-font-700: 164, 164, 164;
+    --theme-font-800: 200, 200, 200;
+    --theme-font-900: 227, 227, 227;
+    --theme-font-950: 247, 247, 247;
+
+    --theme-body-50: 247, 247, 247;
+    --theme-body-100: 227, 227, 227;
+    --theme-body-200: 200, 200, 200;
+    --theme-body-300: 164, 164, 164;
+    --theme-body-400: 129, 129, 129;
+    --theme-body-500: 102, 102, 102;
+    --theme-body-600: 81, 81, 81;
+    --theme-body-700: 67, 67, 67;
+    --theme-body-800: 56, 56, 56;
+    --theme-body-900: 23, 23, 23;
+    --theme-body-950: 0, 0, 0;
+
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
+    -webkit-transition-delay: 9999s;
+  }
+
 }

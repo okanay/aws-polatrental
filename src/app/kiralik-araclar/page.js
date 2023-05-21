@@ -3,6 +3,7 @@ import {PageTitle} from "@/components/Cars-Components/PageTitle";
 import {PageStyle} from "@/components/Cars-Components/PageStyle";
 import {CustomHR} from "@/components/Cars-Components/CustomHR";
 import {PageChangeNavigation} from "@/components/Cars-Components/PageChangeNavigation";
+import {ContactMenu} from "@/components/Cars-Components/Cars-Contact-Components/ContactMenu";
 
 export default function Page() {
 
@@ -340,7 +341,7 @@ export default function Page() {
             <PageTitle/>
             <PageChangeNavigation cardCount={Data.length} maxShowedCardCount={maxShowedCardCount}/>
             <CustomHR/>
-            <CardItems Data={Data} maxShowedCardCount={maxShowedCardCount} />
+            <CardItems Data={Data} maxShowedCardCount={maxShowedCardCount}/>
             <CustomHR/>
             <PageChangeNavigation cardCount={Data.length} maxShowedCardCount={maxShowedCardCount}/>
         </PageStyle>)

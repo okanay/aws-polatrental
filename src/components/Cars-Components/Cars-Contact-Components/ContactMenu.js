@@ -19,29 +19,30 @@ export const ContactMenu = () => {
     if (!carsContact.formVisible) return
 
     return <>
-        <div className={'w-screen h-screen bg-slate-800/40 fixed z-[100] top-0 font-radio'}>
-            <div className={'w-full h-full flex flex-col justify-center items-center px-2 scale-95 tablet:scale-100 '}>
-                <div className={'flex flex-col justify-start items-start text-start mx-auto w-full h-auto max-w-[480px] px-8 py-6 gap-2 rounded-lg bg-white border border-gray-300/50 shadow shadow-gray-300/50 relative'}>
+        <div className="bg-black bg-opacity-50 z-[100] fixed inset-0 flex justify-center items-center">
+            <div className="w-full flex flex-col justify-center items-center px-2 scale-95 tablet:scale-100">
+                <div className="max-h-screen overflow-y-auto flex flex-col justify-start items-start text-start mx-auto w-full h-auto max-w-[480px] px-8 py-6 gap-2 rounded-lg bg-white border border-gray-300/50 shadow shadow-gray-300/50 relative">
 
-                    <div className={'absolute top-1 right-3 ring-0 cursor-pointer'}>
+                    <div className="absolute top-1 right-3 ring-0 cursor-pointer">
                         <MenuCloseButton/>
                     </div>
-                    <div className={'my-4 w-full flex justify-between items-center'}>
+                    <div className="my-4 w-full flex justify-between items-center">
                         <ContactMenuButton>
                             <CloseTextButton/>
                         </ContactMenuButton>
-                        <div className={'bg-clip-text bg-gradient-to-tr from-slate-600 to-slate-800 font-medium'}>
-                            <h4
-                                className={"font-plexSerif text-xl sm:text-2xl text-transparent mb-1"}>
+                        <div className="bg-clip-text bg-gradient-to-tr from-slate-600 to-slate-800 font-medium">
+                            <h4 className="font-plexSerif text-xl sm:text-2xl text-transparent mb-1">
                                 Polat Rental
                             </h4>
                         </div>
                     </div>
 
-                    <h1 className={'text-[0.95rem] text-skin-theme-600 font-bold font-openSans'}>Kiralamaya Başla:</h1>
-                    <p className={'text-sm sm:text-base'}><span className={'font-medium'}>Harika!</span> Seçtiğiniz modeli kiralamaya hemen başlayabilirsiniz. İletişim bilgilerinizi bize
-                        ulaştırırsanız sizi en kısa sürede ulaşacağız.</p>
-                    <div className={'flex flex-row flex-wrap justify-start items-center gap-1 smPhone:gap-2 sm:gap-4 text-gray-900 font-bold text-xs basePhone:text-sm sm:text-base'}>
+                    <h1 className="text-sm text-skin-theme-600 font-bold font-openSans">Kiralamaya Başla:</h1>
+                    <p className="text-sm sm:text-base">
+                        <span className="font-medium">Harika!</span> Seçtiğiniz modeli kiralamaya hemen başlayabilirsiniz. İletişim bilgilerinizi bize
+                        ulaştırırsanız sizi en kısa sürede ulaşacağız.
+                    </p>
+                    <div className="flex flex-row flex-wrap justify-start items-center gap-1 smPhone:gap-2 sm:gap-4 text-gray-900 font-bold text-xs basePhone:text-sm sm:text-base">
                         <p>{carsContact.data.brand}</p>
                         <p>{carsContact.data.name}</p>
                         <p>{carsContact.data.type}</p>
@@ -54,4 +55,5 @@ export const ContactMenu = () => {
             </div>
         </div>
     </>
+
 }

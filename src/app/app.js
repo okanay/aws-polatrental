@@ -4,7 +4,7 @@
 import { Provider } from 'react-redux'
 import store from '../redux/store'
 export const AppComponent = ({children}) => {
-
+        // test....
     return <>
         <Provider store={store}>
             {children}

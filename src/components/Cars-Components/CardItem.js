@@ -7,20 +7,26 @@ import GasSVG from "../../../public/CardIcons/gas.svg";
 import GearSVG from "../../../public/CardIcons/gear.svg";
 import AcSVG from "../../../public/CardIcons/AC.svg";
 import IdSVG from "../../../public/CardIcons/id.svg";
+import spinner from "../../../public/SVG/spinner.svg"
 import {CardStatus} from "@/components/Cars-Components/CardStatus";
-import {ContactMenuButton} from "@/components/Cars-Components/Cars-Contact-Components/ContactMenuButton";
-import {useDispatch} from "react-redux";
-import {changeCarsContactData} from "@/redux/slice/carsContactSlice";
 import {CardContactButton} from "@/components/Cars-Components/Cars-Contact-Components/CardContactButton";
+import {useState} from "react";
 
 export const CardItem = ({cardData}) => {
 
     const defaultImageSrc = `/CarImages/${cardData.brand}/${cardData.name}/${cardData.year}/default.webp`
-
+    const [loading, setLoading] = useState(true)
 
     return <div
-        className="group max-w-[375px] lg:max-w-[360px] w-full bg-white border border-slate-100 shadow-neutral-300/25 shadow-md rounded-lg hover:border-slate-200 transition-colors duration-500 overflow-hidden">
+        className="group max-w-[375px] lg:max-w-[360px] w-full bg-white border border-slate-100 shadow-neutral-300/25 shadow-md rounded-lg hover:border-slate-200 transition-colors duration-500 overflow-hidden relative">
+        <div className={`flex flex-col justify-center items-center absolute min-h-[185px] max-h-[185px] w-full z-[99] ${!loading ? 'hidden' : 'block'}`}>
+            <Image priority
+                   className="w-14 h-14 absolute"
+                   src={spinner} alt={"Yükleniyor."}
+            />
+        </div>
         <Image priority
+               onLoadingComplete={() => {setLoading(false)}}
                className="group-hover:scale-110 transition-all duration-500 rounded-t-lg min-h-[185px] max-h-[185px] object-center object-scale-down bg-gradient-to-t from-white via-skin-theme-950/20 to-skin-theme-950/10  max-h-[175px]"
                src={defaultImageSrc} alt={cardData.image[0].imageAlt}
                width={1200} height={1200}/>

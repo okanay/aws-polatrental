@@ -9,9 +9,9 @@ export const ContactInput = ({label, name, type, placeholder, required, onChange
                placeholder={placeholder}
                required={required}
                onChange={onChange}
-               value={value}
-               onBlur={onBlur}
                autoComplete={'off'}
+               onBlur={onBlur}
+               value={value}
                className={`${error !== undefined ? 'border-rose-400' : 'border-gray-600/90'} duration-500 transition-colors
                font-figtree font-semibold text-gray-500 text-sm
                placeholder:text-sm placeholder:font-base

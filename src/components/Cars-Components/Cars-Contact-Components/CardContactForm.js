@@ -1,22 +1,15 @@
 'use client'
 
-import {ContactMenuButton} from "@/components/Cars-Components/Cars-Contact-Components/ContactMenuButton";
-import {useEffect, useRef, useState} from "react";
 import {useSelector} from "react-redux";
-import {sendCardContactForm, sendContactForm} from "@/lib/api";
-import {ContactInput} from "@/components/Index-Components/ContactUS-Components/ContactInput";
+import {sendCardContactForm} from "@/lib/api";
 import * as Yup from "yup";
 import {useFormik} from "formik";
 import {CardContactInput} from "@/components/Cars-Components/Cars-Contact-Components/CardContactInput";
+import {useContactFormik} from "@/formik/useContactFormik";
 
 export const CardContactForm = () => {
 
     const carsContact = useSelector(state => state.carsContact.value)
-
-    const [loading, setLoading] = useState(false)
-    const [success, setSuccess] = useState(false)
-    const [error, setError] = useState({state: false, message: ""})
-    const [initialValidation, setInitialValidation] = useState(false);
 
     const validationSchema = Yup.object({
         firstName: Yup.string()
@@ -58,12 +51,9 @@ export const CardContactForm = () => {
             setSuccess(false)
 
 
-            if (error.state)
-            {
+            if (error.state) {
                 setSubmitting(false);
-            }
-            else
-            {
+            } else {
                 if (!loading) setLoading(true)
 
                 const cardContactFormData = {
@@ -83,9 +73,7 @@ export const CardContactForm = () => {
                     setError({state: false, message: ""})
                     setInitialValidation(false);
 
-                }
-                else if (status !== 200)
-                {
+                } else if (status !== 200) {
                     setError({state: false, message: "Bir hata meydana geldi"})
                 }
 
@@ -93,33 +81,17 @@ export const CardContactForm = () => {
             }
         },
     });
-    const cardValidateForm = async () => {
 
-        setSuccess(false)
-
-        try
-        {
-            await validationSchema.validate(contactFormik.values, {abortEarly: false});
-            setError({state: false, message: ''});
-        }
-        catch (error)
-        {
-            const firstError = error.inner[0].message;
-            setError({state: true, message: firstError});
-        }
-    };
-
-    useEffect(() => {
-        if (initialValidation)
-        {
-            cardValidateForm();
-        }
-        else
-        {
-            setInitialValidation(true);
-        }
-
-    }, [contactFormik.values]);
+    const {
+        error,
+        success,
+        loading,
+        initialValidation,
+        setError,
+        setSuccess,
+        setLoading,
+        setInitialValidation
+    } = useContactFormik(validationSchema, contactFormik)
 
     return <>
         <form onSubmit={contactFormik.handleSubmit} className={'w-full'}>
@@ -159,6 +131,8 @@ export const CardContactForm = () => {
             <CardContactInput
                 error={contactFormik.errors.tel}
                 value={contactFormik.values.tel}
+                max={10}
+                min={10}
                 onChange={contactFormik.handleChange}
                 onBlur={contactFormik.handleBlur}
                 type={"tel"}
@@ -191,7 +165,7 @@ export const CardContactForm = () => {
                         <span className={`${loading === false ? "block" : "hidden font-openSans"}`}>
                             İletişime Geç
                         </span>
-                        <span className={`${loading === true ? "block" : "hidden"} relative font-openSans`}>
+                    <span className={`${loading === true ? "block" : "hidden"} relative font-openSans`}>
                             Gönderiliyor..
                         </span>
                 </button>

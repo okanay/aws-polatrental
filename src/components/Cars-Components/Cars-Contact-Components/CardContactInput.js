@@ -1,4 +1,4 @@
-export const CardContactInput = ({type, name, id, placeholder, onChange, onBlur, value, label, error}) => {
+export const CardContactInput = ({type, name, id, placeholder, onChange, onBlur, value, label, error, min, max}) => {
 
 
     return <>
@@ -10,6 +10,8 @@ export const CardContactInput = ({type, name, id, placeholder, onChange, onBlur,
                 type={type}
                 name={name}
                 id={id}
+                min={min || undefined}
+                max={max || undefined}
                 style={{outline: "none"}}
                 placeholder={placeholder}
                 onChange={onChange}

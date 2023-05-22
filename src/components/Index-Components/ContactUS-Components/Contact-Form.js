@@ -8,13 +8,9 @@ import {sendContactForm} from "@/lib/api";
 import {useFormik} from "formik";
 import * as Yup from "yup";
 import {log} from "next/dist/server/typescript/utils";
+import {useContactFormik} from "@/formik/useContactFormik";
 
 export const ContactForm = () => {
-
-    const [loading, setLoading] = useState(false)
-    const [success, setSuccess] = useState(false)
-    const [error, setError] = useState({state: false, message: ""})
-    const [initialValidation, setInitialValidation] = useState(false);
 
     const validationSchema = Yup.object({
         firstName: Yup.string()
@@ -87,26 +83,18 @@ export const ContactForm = () => {
             }
         },
     });
-    const validateForm = async () => {
 
-        setSuccess(false)
-        try {
-            await validationSchema.validate(contactFormik.values, {abortEarly: false});
-            setError({state: false, message: ''});
-        } catch (error) {
-            const firstError = error.inner[0].message;
-            setError({state: true, message: firstError});
-        }
-    };
+    const {
+        error,
+        success,
+        loading,
+        initialValidation,
+        setError,
+        setSuccess,
+        setLoading,
+        setInitialValidation
+    } = useContactFormik(validationSchema, contactFormik)
 
-    useEffect(() => {
-        if (initialValidation) {
-            validateForm();
-        } else {
-            setInitialValidation(true);
-        }
-
-    }, [contactFormik.values]);
 
     return <div className={'w-full h-full font-radio'}>
         <form className={'flex flex-col gap-1'} onSubmit={contactFormik.handleSubmit}>

@@ -5,7 +5,7 @@ import {sendCardContactForm} from "@/lib/api";
 import * as Yup from "yup";
 import {useFormik} from "formik";
 import {CardContactInput} from "@/components/Cars-Components/Cars-Contact-Components/CardContactInput";
-import {useContactFormik} from "@/formik/useContactFormik";
+import {useFormValidate} from "@/formik/useFormValidate";
 
 export const CardContactForm = () => {
 
@@ -48,33 +48,41 @@ export const CardContactForm = () => {
         onSubmit: async (values, {resetForm, setSubmitting}) => {
 
             if (loading) return
+
             setSuccess(false)
+            setLoading(true)
+            setError({state: false, message: ""})
 
-
-            if (error.state) {
+            if (error.state)
+            {
                 setSubmitting(false);
-            } else {
-                if (!loading) setLoading(true)
+            }
+            else
+            {
+                const cardContactFormData =
+                    {
+                        email: contactFormik.values.email,
+                        tel: contactFormik.values.tel,
+                        firstName: contactFormik.values.firstName,
+                        lastName: contactFormik.values.lastName,
+                        data: {...carsContact.data}
+                    }
 
-                const cardContactFormData = {
-                    email: contactFormik.values.email,
-                    tel: contactFormik.values.tel,
-                    firstName: contactFormik.values.firstName,
-                    lastName: contactFormik.values.lastName,
-                    data: {...carsContact.data}
-                }
                 const data = await sendCardContactForm(cardContactFormData)
                 const status = data.status
 
-                if (status === 200) {
+                if (status === 200)
+                {
                     resetForm()
 
                     setSuccess(true)
                     setError({state: false, message: ""})
                     setInitialValidation(false);
 
-                } else if (status !== 200) {
-                    setError({state: false, message: "Bir hata meydana geldi"})
+                }
+                else if (status !== 200)
+                {
+                    setError({state: false, message: "Sunucuda bir hata meydana geldi"})
                 }
 
                 setLoading(false)
@@ -86,12 +94,11 @@ export const CardContactForm = () => {
         error,
         success,
         loading,
-        initialValidation,
         setError,
         setSuccess,
         setLoading,
         setInitialValidation
-    } = useContactFormik(validationSchema, contactFormik)
+    } = useFormValidate(validationSchema, contactFormik)
 
     return <>
         <form onSubmit={contactFormik.handleSubmit} className={'w-full'}>

@@ -2,14 +2,14 @@
 
 import {useEffect, useState} from "react";
 
-export const useContactFormik = (validationSchema, formik) => {
+export const useFormValidate = (validationSchema, formik) => {
 
     const [loading, setLoading] = useState(false)
     const [success, setSuccess] = useState(false)
     const [error, setError] = useState({state: false, message: ""})
     const [initialValidation, setInitialValidation] = useState(false);
 
-    const cardValidateForm = async () => {
+    const validateForm = async () => {
 
         setSuccess(false)
 
@@ -28,7 +28,7 @@ export const useContactFormik = (validationSchema, formik) => {
     useEffect(() => {
         if (initialValidation)
         {
-            cardValidateForm();
+            validateForm();
         }
         else
         {

@@ -4,11 +4,11 @@ import {ContactInput} from "@/components/Index-Components/ContactUS-Components/C
 import {useEffect, useRef, useState} from "react";
 import {ContactTextarea} from "@/components/Index-Components/ContactUS-Components/ContactTextarea";
 import {ContactButton} from "@/components/Index-Components/ContactUS-Components/ContactButton";
-import {sendContactForm} from "@/lib/api";
+import {sendCardContactForm, sendContactForm} from "@/lib/api";
 import {useFormik} from "formik";
 import * as Yup from "yup";
 import {log} from "next/dist/server/typescript/utils";
-import {useContactFormik} from "@/formik/useContactFormik";
+import {useFormValidate} from "@/formik/useFormValidate";
 
 export const ContactForm = () => {
 
@@ -56,27 +56,32 @@ export const ContactForm = () => {
         onSubmit: async (values, {resetForm, setSubmitting}) => {
 
             if (loading) return
+
             setSuccess(false)
+            setLoading(true)
+            setError({state: false, message: ""})
 
-
-            if (error.state) {
+            if (error.state)
+            {
                 setSubmitting(false);
-            } else {
-                if (!loading) setLoading(true)
-
-
+            }
+            else
+            {
                 const data = await sendContactForm(contactFormik.values)
                 const status = data.status
 
-                if (status === 200) {
+                if (status === 200)
+                {
                     resetForm()
 
                     setSuccess(true)
                     setError({state: false, message: ""})
                     setInitialValidation(false);
 
-                } else if (status !== 200) {
-                    setError({state: false, message: "Bir hata meydana geldi"})
+                }
+                else if (status !== 200)
+                {
+                    setError({state: false, message: "Sunucuda bir hata meydana geldi"})
                 }
 
                 setLoading(false)
@@ -93,7 +98,7 @@ export const ContactForm = () => {
         setSuccess,
         setLoading,
         setInitialValidation
-    } = useContactFormik(validationSchema, contactFormik)
+    } = useFormValidate(validationSchema, contactFormik)
 
 
     return <div className={'w-full h-full font-radio'}>

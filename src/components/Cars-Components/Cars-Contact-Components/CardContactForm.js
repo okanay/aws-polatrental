@@ -52,6 +52,7 @@ export const CardContactForm = () => {
             setSuccess(false)
             setLoading(true)
             setError({state: false, message: ""})
+            setInitialValidation(false)
 
             if (error.state)
             {

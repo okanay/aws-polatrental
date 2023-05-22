@@ -168,7 +168,7 @@ export const CardContactForm = () => {
                 placeholder={'532-XXX-XX-XX'}/>
 
             {error.state && <>
-                <div className={'w-full h-auto flex items-center justify-center mb-0.5 mt-4'}>
+                <div className={'w-full h-auto flex items-center justify-center mt-3'}>
                     <div className={'w-full text-center py-1.5 bg-rose-100 border border-rose-300 rounded px-6'}>
                         <p className={'text-rose-400 font-figtree text-xs basePhone:text-sm font-medium'}>{error.message}</p>
                     </div>
@@ -176,7 +176,7 @@ export const CardContactForm = () => {
             </>}
 
             {success && <>
-                <div className={'w-full h-auto flex items-center justify-center mb-0.5 mt-4'}>
+                <div className={'w-full h-auto flex items-center justify-center mt-3'}>
                     <div className={'w-full text-center py-1.5 bg-emerald-100 border border-emerald-200 rounded px-6'}>
                         <p className={'text-emerald-400 font-figtree text-xs basePhone:text-sm font-medium'}>Mesajınız
                             başarıyla gönderildi.</p>
@@ -184,7 +184,7 @@ export const CardContactForm = () => {
                 </div>
             </>}
 
-            <div className={'flex flex-row justify-end items-center w-full mt-4 pb-3'}>
+            <div className={'flex flex-row justify-end items-center w-full mt-5 pb-3'}>
                 <button
                     disabled={loading}
                     className={'w-full py-[0.65rem] rounded border border-gray-400 text-[1.05rem] text-white bg-gradient-to-tr from-skin-theme-500 via-skin-theme-300/65 to-skin-theme-400 disabled:from-gray-200 disabled:via-gray-300 disabled:to-gray-200 disabled:text-gray-400 disabled:border-gray-400 disabled:cursor-not-allowed'}>

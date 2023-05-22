@@ -109,12 +109,13 @@ export const ContactForm = () => {
     }, [contactFormik.values]);
 
     return <div className={'w-full h-full font-radio'}>
-        <form className={'flex flex-col gap-4'} onSubmit={contactFormik.handleSubmit}>
-            <div className={'grid grid-cols-1 tablet:grid-cols-2 gap-4 tablet:gap-6 w-full'}>
+        <form className={'flex flex-col gap-1'} onSubmit={contactFormik.handleSubmit}>
+            <div className={'grid grid-cols-1 tablet:grid-cols-2 w-full gap-1 sm:gap-6'}>
                 <ContactInput name={'firstName'}
                               type={'text'}
                               label={"Adınız"}
                               onChange={contactFormik.handleChange}
+                              onBlur={contactFormik.handleBlur}
                               value={contactFormik.values.firstName}
                               placeholder={'Adınız'}
                               error={contactFormik.errors.firstName}
@@ -123,6 +124,7 @@ export const ContactForm = () => {
                               type={'text'}
                               label={"Soyadınız"}
                               onChange={contactFormik.handleChange}
+                              onBlur={contactFormik.handleBlur}
                               value={contactFormik.values.lastName}
                               placeholder={'Soyadınız'}
                               error={contactFormik.errors.lastName}
@@ -133,6 +135,7 @@ export const ContactForm = () => {
                           type={'email'}
                           label={'Email Adresiniz'}
                           onChange={contactFormik.handleChange}
+                          onBlur={contactFormik.handleBlur}
                           value={contactFormik.values.email}
                           placeholder={'Email adresiniz'}
                           error={contactFormik.errors.email}
@@ -141,6 +144,7 @@ export const ContactForm = () => {
                           type={'tel'}
                           label={'Telefon Numaranız'}
                           onChange={contactFormik.handleChange}
+                          onBlur={contactFormik.handleBlur}
                           value={contactFormik.values.tel}
                           error={contactFormik.errors.tel}
                           placeholder={'Telefon numaranız (5XX-XXX-XX-XX)'}
@@ -148,19 +152,20 @@ export const ContactForm = () => {
             <ContactTextarea name={'message'}
                              label={'Mesajınız'}
                              onChange={contactFormik.handleChange}
+                             onBlur={contactFormik.handleBlur}
                              value={contactFormik.values.message}
                              error={contactFormik.errors.message}
                              placeholder={'Bizimle iletişime geçmek istediğiniz durum hakkında bilgi verin.'}
                              required={true}/>
             {error.state && <>
-                <div className={'w-full h-auto flex items-center justify-center mb-0.5'}>
+                <div className={'w-full h-auto flex items-center justify-center '}>
                     <div className={'w-full text-center py-1.5 bg-rose-100 border border-rose-300 rounded px-6'}>
                         <p className={'text-rose-400 font-figtree text-xs basePhone:text-sm font-medium'}>{error.message}</p>
                     </div>
                 </div>
             </>}
             {success && <>
-                <div className={'w-full h-auto flex items-center justify-center mb-0.5'}>
+                <div className={'w-full h-auto flex items-center justify-center '}>
                     <div className={'w-full text-center py-1.5 bg-emerald-100 border border-emerald-200 rounded px-6'}>
                         <p className={'text-emerald-400 font-figtree text-xs basePhone:text-sm font-medium'}>Mesajınız
                             başarıyla gönderildi.</p>

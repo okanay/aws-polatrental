@@ -3,7 +3,6 @@ import {PageTitle} from "@/components/Cars-Components/PageTitle";
 import {PageStyle} from "@/components/Cars-Components/PageStyle";
 import {CustomHR} from "@/components/Cars-Components/CustomHR";
 import {PageChangeNavigation} from "@/components/Cars-Components/PageChangeNavigation";
-import {ContactMenu} from "@/components/Cars-Components/Cars-Contact-Components/ContactMenu";
 
 export default function Page() {
 
@@ -29,7 +28,7 @@ export default function Page() {
             image: [
                 {
                     src: "/CarImages/Renault/Clio/2017/Nature4.webp",
-                    imageAlt: "123",
+                    imageAlt: "Citreon C-Elysee Beyaz Arkaplansız Görseli imageZ-Studio",
                     width: 2048,
                     height: 1067,
                 }
@@ -56,7 +55,7 @@ export default function Page() {
             image: [
                 {
                     src: "/CarImages/Peugeot/301/2017/Nature4.webp",
-                    imageAlt: "",
+                    imageAlt: "Peugeot 301 Beyaz Arkaplansız Görseli imageZ-Studio",
                     width: 2048,
                     height: 1067,
                 }
@@ -83,7 +82,7 @@ export default function Page() {
             image: [
                 {
                     src: "/CarImages/Renault/Clio/2017/Nature4.webp",
-                    imageAlt: "",
+                    imageAlt: "Renault Clio Station Beyaz Arkaplansız Görseli imageZ-Studio",
                     width: 2048,
                     height: 1067,
                 }
@@ -110,7 +109,7 @@ export default function Page() {
             image: [
                 {
                     src: "/CarImages/Renault/Clio/2017/Nature4.webp",
-                    imageAlt: "123",
+                    imageAlt: "Renault Clio Station Beyaz Arkaplansız Görseli imageZ-Studio",
                     width: 2048,
                     height: 1067,
                 }
@@ -137,7 +136,7 @@ export default function Page() {
             image: [
                 {
                     src: "/CarImages/Fiat/Megane/2017/Nature4.webp",
-                    imageAlt: "Kıralık Fiat Megane 2017 Model Kapak Görseli",
+                    imageAlt: "Renault Megane Beyaz Arkaplansız Görseli imageZ-Studio",
                     width: 838,
                     height: 471,
                 }
@@ -164,7 +163,7 @@ export default function Page() {
             image: [
                 {
                     src: "/CarImages/Fiat/Megane/2017/Nature4.webp",
-                    imageAlt: "Kıralık Fiat Megane 2017 Model Kapak Görseli",
+                    imageAlt: "Renault Megane Beyaz Arkaplansız Görseli imageZ-Studio",
                     width: 838,
                     height: 471,
                 }
@@ -191,7 +190,7 @@ export default function Page() {
             image: [
                 {
                     src: "/CarImages/Fiat/Megane/2017/Nature4.webp",
-                    imageAlt: "Kıralık Fiat Megane 2017 Model Kapak Görseli",
+                    imageAlt: "Renault Megane Beyaz Arkaplansız Görseli imageZ-Studio",
                     width: 838,
                     height: 471,
                 }
@@ -218,7 +217,7 @@ export default function Page() {
             image: [
                 {
                     src: "/CarImages/Fiat/Megane/2017/Nature4.webp",
-                    imageAlt: "Kıralık Fiat Megane 2017 Model Kapak Görseli",
+                    imageAlt: "Renault Megane Beyaz Arkaplansız Görseli imageZ-Studio",
                     width: 838,
                     height: 471,
                 }
@@ -245,7 +244,7 @@ export default function Page() {
             image: [
                 {
                     src: "/CarImages/Peugeot/301/2017/Nature4.webp",
-                    imageAlt: "",
+                    imageAlt: "Volkswagen Passat Beyaz Arkaplansız Görseli imageZ-Studio",
                     width: 2048,
                     height: 1067,
                 }
@@ -272,7 +271,7 @@ export default function Page() {
             image: [
                 {
                     src: "/CarImages/Peugeot/301/2017/Nature4.webp",
-                    imageAlt: "",
+                    imageAlt: "BMW 520i Beyaz Arkaplansız Görseli imageZ-Studio",
                     width: 2048,
                     height: 1067,
                 }
@@ -299,7 +298,7 @@ export default function Page() {
             image: [
                 {
                     src: "/CarImages/Peugeot/301/2017/Nature4.webp",
-                    imageAlt: "",
+                    imageAlt: "Mercedes C180 Beyaz Arkaplansız Görseli imageZ-Studio",
                     width: 2048,
                     height: 1067,
                 }
@@ -326,7 +325,7 @@ export default function Page() {
             image: [
                 {
                     src: "/CarImages/Peugeot/301/2017/Nature4.webp",
-                    imageAlt: "",
+                    imageAlt: "Mercedes Vito Beyaz Arkaplansız Görseli imageZ-Studio",
                     width: 2048,
                     height: 1067,
                 }

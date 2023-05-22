@@ -13,7 +13,7 @@ export const ContactButton = ({onClick, btnText, type, ref, loading}) => {
             relative text-gray-900/90 font-semibold font-openSans text-sm w-[175px] h-[50px] 
             bg-white border-[0.11rem] border-gray-600 rounded text-gray-600
             hover:bg-skin-theme-400 hover:border-skin-theme-200/40 hover:text-white
-            transition-colors duration-500`}>
+            transition-colors duration-500 mt-3`}>
             <span className={`${loading === false ? "block" : "hidden"}`}>
                 {btnText}
             </span>

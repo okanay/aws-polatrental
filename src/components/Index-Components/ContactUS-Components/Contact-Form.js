@@ -106,6 +106,7 @@ export const ContactForm = () => {
         <form className={'flex flex-col gap-1'} onSubmit={contactFormik.handleSubmit}>
             <div className={'grid grid-cols-1 tablet:grid-cols-2 w-full gap-1 sm:gap-6'}>
                 <ContactInput name={'firstName'}
+                              id={'firstName'}
                               type={'text'}
                               label={"Adınız"}
                               onChange={contactFormik.handleChange}
@@ -115,6 +116,7 @@ export const ContactForm = () => {
                               error={contactFormik.errors.firstName}
                               required={true}/>
                 <ContactInput name={'lastName'}
+                              id={'lastName'}
                               type={'text'}
                               label={"Soyadınız"}
                               onChange={contactFormik.handleChange}
@@ -127,6 +129,7 @@ export const ContactForm = () => {
             </div>
             <ContactInput name={'email'}
                           type={'email'}
+                          id={'email'}
                           label={'Email Adresiniz'}
                           onChange={contactFormik.handleChange}
                           onBlur={contactFormik.handleBlur}
@@ -136,6 +139,7 @@ export const ContactForm = () => {
                           required={true}/>
             <ContactInput name={'tel'}
                           type={'tel'}
+                          id={'tel'}
                           label={'Telefon Numaranız'}
                           onChange={contactFormik.handleChange}
                           onBlur={contactFormik.handleBlur}

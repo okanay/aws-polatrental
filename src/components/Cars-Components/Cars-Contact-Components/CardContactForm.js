@@ -147,9 +147,9 @@ export const CardContactForm = () => {
                 id={'tel'}
                 name={'tel'}
                 label={'Telefon Numaranız'}
-                placeholder={'532-XXX-XX-XX'}/>
+                placeholder={'Telefon numaranız (5XX-XXX-XX-XX)'}/>
 
-            {error.state && <>
+                {error.state && <>
                 <div className={'w-full h-auto flex items-center justify-center mt-3'}>
                     <div className={'w-full text-center py-1.5 bg-rose-100 border border-rose-300 rounded px-6'}>
                         <p className={'text-rose-400 font-figtree text-xs basePhone:text-sm font-medium'}>{error.message}</p>
